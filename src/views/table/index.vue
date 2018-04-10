@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import { getList, getFilteredInfo } from '@/api/table'
+import { getList, getFilteredInfo, getAdvList } from '@/api/table'
 import Vfilter from './filter.vue'
 
 export default {

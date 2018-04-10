@@ -36,29 +36,79 @@ export const constantRouterMap = [
       component: () => import('@/views/dashboard/index')
     }]
   },
-
+  // 系统管理路由
   {
-    path: '/example',
+    path: '/system_management',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: '表格', icon: 'example' },
+    redirect: '/system_management/city_management',
+    name: 'System_management',
+    meta: { title: '系统管理', icon: 'example' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: '示例表格', icon: 'table' }
+        path: 'city_management',
+        name: 'City_management',
+        component: () => import('@/views/city_management/index'),
+        meta: { title: '城市管理', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: '可视化', icon: 'table' }
+        path: 'edit_article',
+        name: 'Edit_article',
+        component: () => import('@/views/edit_article/index'),
+        meta: { title: '编辑文章', icon: 'table' }
       }
     ]
   },
-
+  // 网站信息管理
+  {
+    path: '/site_info',
+    component: Layout,
+    redirect: '/site_info/basic_info',
+    name: 'Site_info',
+    meta: { title: '网站管理', icon: 'example' },
+    children: [
+      {
+        path: 'basic_info',
+        name: 'basic_info',
+        component: () => import('@/views/site_info/basic_info/basic_info.vue'),
+        meta: { title: '基本信息', icon: 'table' }
+      },
+      {
+        path: 'other_info',
+        name: 'other_info',
+        component: () => import('@/views/site_info/other_info/other_info.vue'),
+        meta: { title: '其他信息', icon: 'table' }
+      }
+    ]
+  },
+  // 内容信息管理
+  {
+    path: '/content_manage',
+    component: Layout,
+    redirect: '/content_manage/img_manage',
+    name: 'content_manage',
+    meta: { title: '内容信息管理', icon: 'example' },
+    children: [
+      {
+        path: 'img_manage',
+        name: 'img_manage',
+        component: () => import('@/views/content_manage/img_manage/img_manage.vue'),
+        meta: { title: '图片信息管理', icon: 'table' }
+      },
+      {
+        path: 'article_manage',
+        name: 'article_manage',
+        component: () => import('@/views/content_manage/article_manage/article_manage.vue'),
+        meta: { title: '文章信息管理', icon: 'table' }
+      },
+      {
+        path: 'comment_manage',
+        name: 'comment_manage',
+        component: () => import('@/views/content_manage/comment_manage/comment_manage.vue'),
+        meta: { title: '评论管理', icon: 'table' }
+      }
+    ]
+  },
+  // 表单
   {
     path: '/form',
     component: Layout,

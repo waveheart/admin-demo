@@ -1,11 +1,24 @@
 import request from '@/utils/request'
 
 // 登陆请求
+// export function login(username, password) {
+//   console.log('login')
+//   console.log(username, password)
+//   return request({
+//     url: '/user/login',
+//     method: 'post',
+//     data: {
+//       username,
+//       password
+//     }
+//   })
+// }
+// 
 export function login(username, password) {
   console.log('login')
   console.log(username, password)
   return request({
-    url: '/user/login',
+    url: '/login/doLogin',
     method: 'post',
     data: {
       username,

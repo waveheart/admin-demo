@@ -19,3 +19,14 @@ export function getFilteredInfo(fiter_params) {
     }
   })
 }
+
+/*
+** 测试公告API
+ */
+export function getAdvList(params) {
+  return request({
+    url: '/qiye/public/admin/adv/index',
+    method: 'get',
+    params
+  })
+}
